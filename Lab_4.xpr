@@ -60,14 +60,18 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd"/>
+          <Attr Name="ImportTime" Val="1636529787"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Xilinx/Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd"/>
+          <Attr Name="ImportTime" Val="1599082553"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -78,20 +82,24 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd"/>
+          <Attr Name="ImportTime" Val="1633019035"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd"/>
+          <Attr Name="ImportTime" Val="1632413661"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../Lab_3/Lab_3.srcs/sources_1/new/Register.vhd">
-        <FileInfo>
+        <FileInfo RelPath="Lab_3/Lab_3.srcs/sources_1/new/Register.vhd">
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -102,8 +110,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd"/>
+          <Attr Name="ImportTime" Val="1633293667"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
