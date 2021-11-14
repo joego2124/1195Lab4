@@ -1,2 +1,4 @@
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'CPUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU'

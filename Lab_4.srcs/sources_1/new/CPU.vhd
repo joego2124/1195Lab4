@@ -34,8 +34,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity CPU is
   Port (
     Reset, Clock : in std_logic;
+    MemoryWrite  : out std_logic;
     MemoryDataIn : in std_logic_vector(31 downto 0);
-    MemoryDataOut, MemoryAdress, MemoryWrite: out std_logic_vector(31 downto 0)
+    MemoryDataOut, MemoryAdress: out std_logic_vector(31 downto 0)
   );
 end CPU;
 
@@ -97,15 +98,16 @@ architecture Behavioral of CPU is
         ALUOp: out std_logic_vector(3 downto 0) := "0000";
         RegWrite, RegDst: out std_logic := '0';
         SHAMT : out std_logic_vector(4 downto 0);
-        SLLV : out std_logic
+        SLLV, MemRegEn : out std_logic;
+        Load_sel : out std_logic_vector(1 downto 0)
       );
     end component CPUControl;
     
     --control signals
     signal ALUSrcA : std_logic;
-    signal ALUSrcB : std_logic_vector(1 downto 0);
+    signal ALUSrcB, Load_sel  : std_logic_vector(1 downto 0);
     signal PC_en, PCWrite, PCWriteCond, ALU_zero, IorD, ALU_of : std_logic;
-    signal MemWrite, MemtoReg, IRWrite, RegDst, RegWrite, SLLV : std_logic;
+    signal MemWrite, MemtoReg, IRWrite, RegDst, RegWrite, SLLV, MemRegEn : std_logic;
     
     --IF signals
     signal ALU_result, PC_in, PC_out : std_logic_vector(31 downto 0) := (others => '0');
@@ -114,11 +116,12 @@ architecture Behavioral of CPU is
     signal J_shift_2 : std_logic_vector(27 downto 0);
     
     --Ins reg signals
-    signal Ins_out : std_logic_vector(31 downto 0);
+    signal Ins_out, Mem_reg_out : std_logic_vector(31 downto 0);
      
     --Regs signals
     signal W_reg : std_logic_vector(4 downto 0);
     signal W_data, R_data1, R_data2 : std_logic_vector(31 downto 0);
+    signal W_data_seg : std_logic_vector(31 downto 0) := (others => '0');
     
     --Reg to ALU intermediate reg signals
     signal Reg_A_out, Reg_B_out : std_logic_vector(31 downto 0);
@@ -140,15 +143,17 @@ begin
             PCWriteCond => PCWriteCond, PCWrite => PCWrite,
             PCSource => PCSource,
             IorD => IorD,
-            MemWrite => MemWrite, MemtoReg => MemtoReg,
+            MemWrite => MemoryWrite, MemtoReg => MemtoReg,
             IRWrite => IRWrite,
             ALUSrcA => ALUSrcA, ALUA => EN_A, ALUB => EN_B, ALUOut => ALU_out_en,
             ALUSrcB => ALUSrcB,
             ALUOp => ALUop,
             RegWrite => RegWrite, RegDst => RegDst,
             SHAMT => SHAMT,
-            SLLV => SLLV
+            SLLV => SLLV,
+            MemRegEn => MemRegEn
         );
+        
     J_EXT : SignExtend
         generic map (
             INL   => 26,
@@ -178,7 +183,7 @@ begin
             CLK => Clock,
             D => PC_in,
             EN => PC_en,
-            RST => '0',
+            RST => Reset,
             Q => PC_out
         );
         
@@ -188,13 +193,35 @@ begin
             CLK => clock,
             D => MemoryDataIn,
             EN => IRWrite,
-            RST => '0',
+            RST => Reset,
             Q => Ins_out
         );
     
+    MEM_REG : flipflop
+        generic map (N => 32)
+        port map (
+            CLK => clock,
+            D => MemoryDataIn,
+            EN => MemRegEn,
+            RST => Reset,
+            Q => Mem_reg_out
+        );
+        
     W_reg <= Ins_out(20 downto 16) when (RegDst = '0') else Ins_out(15 downto 11); 
     
-    W_data <= ALU_Out; --temp
+    W_data <= ALU_Out when (MemtoReg = '0') else Mem_reg_out;
+    
+    process(W_data)
+    begin
+        W_data_seg <= x"00000000";
+        if (Load_sel = "00") then
+            W_data_seg <= W_data; --load word
+        elsif (Load_sel = "01") then
+            W_data_seg(15 downto 0) <= W_data(15 downto 0); --load halfword
+        elsif (Load_sel = "10") then
+            W_data_seg(7 downto 0) <= W_data(7 downto 0); --load byte
+        end if;
+    end process;
     
     IMM_EX : SignExtend
         generic map (
@@ -250,6 +277,8 @@ begin
             RST => Reset,
             Q => Reg_B_out
         );
+    
+    MemoryDataOut <= Reg_B_out;
         
     ALU_A <= PC_out when (ALUSrcA = '0') else Reg_A_out;
     

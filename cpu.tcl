@@ -22,7 +22,12 @@ run 10 ns
 
 remove_forces -all
 
-add_force MemoryDataIn -radix hex 400008
+add_force MemoryDataIn -radix hex 8C40000F
+
+add_force clock 1
+run 10 ns 
+add_force clock 0
+run 10 ns 
 
 add_force clock 1
 run 10 ns 
