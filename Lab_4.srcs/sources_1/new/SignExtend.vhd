@@ -52,7 +52,11 @@ begin
 
     process(INPUT, extended)
     begin
-        extended <= (others => '0');
+        if (INPUT(INL - 1) = '1') then
+            extended <= (others => '1');
+        else
+            extended <= (others => '0');            
+        end if;
         extended(INL - 1 downto 0) <= INPUT;
         OUTPUT <= std_logic_vector(shift_left(unsigned(extended), SHIFT));
 --        OUTPUT <= extended;

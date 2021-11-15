@@ -120,6 +120,7 @@ begin
                     
                 --I-type
                 elsif (OP = "001000") then --add immediate
+                    RegDst <= '0'; --select 20 downto 16 for destination register
                     ALUA <= '1'; --latch ALU inputs
                     ALUB <= '1';
                     ALUOp <= "0100"; --add signed
@@ -127,6 +128,7 @@ begin
                     ALUSrcB <= "10"; --select 32 bit extended immediate
                     next_state <= exec;
                 elsif (OP = "001101") then --or immediate
+                    RegDst <= '0'; --select 20 downto 16 for destination register
                     ALUA <= '1'; --latch ALU inputs
                     ALUB <= '1';
                     ALUOp <= "0001"; --or
@@ -134,6 +136,7 @@ begin
                     ALUSrcB <= "10"; --select 32 bit extended immediate
                     next_state <= exec;
                 elsif (OP = "001010") then --SLTI immediate
+                    RegDst <= '0'; --select 20 downto 16 for destination register
                     ALUA <= '1'; --latch ALU inputs
                     ALUB <= '1';
                     ALUOp <= "1010"; --shift left signed
@@ -155,7 +158,7 @@ begin
                     next_state <= ins_fetch;
                 elsif (OP = "000001") then --BLTZAL, TODO
                     next_state <= branch_comp;
-                elsif (OP = "101011" or OP = "100011") then --SW, LW
+                elsif (OP = "101011" or OP = "100011" or OP = "100000" or OP = "100001") then --SW, LW, LB, LW
                     ALUA <= '1'; --latch ALU A inputs for base addr
                     ALUSrcA <= '1'; --set SrcA to regA
                     ALUSrcB <= "10"; --set SrcB to immediate offset
@@ -168,7 +171,11 @@ begin
                 ALUOut <= '1'; --latch ALU result next pulse
                 next_state <= r_comp;
             when r_comp =>
-                RegDst <= '1'; --select rd for reg addr
+                if (OP = "000000") then
+                    RegDst <= '1'; --select rd for reg addr
+                else
+                    RegDst <= '0'; --select rt for reg addr for immediate ins
+                end if;
                 MemToReg <= '0'; --write back ALU result to dst reg
                 RegWrite <= '1'; --enable writing to registers
                 
@@ -214,7 +221,7 @@ begin
                     PCSource <= "00"; --set next PC to result of ALU: current PC +4
                     PCWrite <= '1'; --update pc reg with +4 pc
                     next_state <= ins_fetch;
-                elsif (OP = "100011") then
+                elsif (OP = "100011" or OP = "100000" or OP = "100001") then
                     MemRegEn <= '1'; --store data from memory into memory reg
                     next_state <= mem_read_comp;
                 end if;

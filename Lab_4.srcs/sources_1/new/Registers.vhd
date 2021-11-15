@@ -57,7 +57,7 @@ architecture Behavioral of Registers is
     type arr is array(31 downto 0) of std_logic_vector(31 downto 0);
     type arr2 is array(31 downto 0) of std_logic;
     signal SEL : arr2;
-    signal Q_temp : arr;
+    signal Q_temp : arr := (OTHERS => x"00000000");
 begin
 
 --    GEN: for i in 0 to 31 generate

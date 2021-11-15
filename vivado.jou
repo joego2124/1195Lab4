@@ -1,0 +1,149 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Nov 14 18:11:37 2021
+# Process ID: 22872
+# Current directory: C:/Xilinx/Lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17488 C:\Xilinx\Lab_4\Lab_4.xpr
+# Log file: C:/Xilinx/Lab_4/vivado.log
+# Journal file: C:/Xilinx/Lab_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Xilinx/Lab_4/Lab_4.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source CPU.tcl
+source ./cpu.tcl
+source ./addu_test.tcl
+source ./addu_test.tcl
+source ./addu_test.tcl
+source ./addu_test.tcl
+source ./addu_test.tcl
+source ./addu_test.tcl
+source ./addu_test.tcl
+file mkdir C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd w ]
+add_files -fileset sim_1 C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source CPU_tb.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+close_sim
+launch_simulation
+launch_simulation
+source CPU_tb.tcl
+source CPU_tb.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_memory [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+relaunch_sim
+close_sim
+close_sim
+launch_simulation
+source CPU_memory.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+relaunch_sim
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+relaunch_sim
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+source ./mem.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source CPU_tb.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_memory [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source CPU_memory.tcl
+source ./mem.tcl
+source ./mem.tcl
+current_sim simulation_5
+relaunch_sim
+current_sim simulation_6
+close_sim
+relaunch_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+relaunch_sim
+update_compile_order -fileset sim_1
+source ./toplevel.tcl
+relaunch_sim

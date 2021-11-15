@@ -151,7 +151,8 @@ begin
             RegWrite => RegWrite, RegDst => RegDst,
             SHAMT => SHAMT,
             SLLV => SLLV,
-            MemRegEn => MemRegEn
+            MemRegEn => MemRegEn,
+            Load_sel => Load_sel
         );
         
     J_EXT : SignExtend
@@ -217,9 +218,9 @@ begin
         if (Load_sel = "00") then
             W_data_seg <= W_data; --load word
         elsif (Load_sel = "01") then
-            W_data_seg(15 downto 0) <= W_data(15 downto 0); --load halfword
+            W_data_seg(15 downto 0) <= W_data(31 downto 16); --load halfword
         elsif (Load_sel = "10") then
-            W_data_seg(7 downto 0) <= W_data(7 downto 0); --load byte
+            W_data_seg(7 downto 0) <= W_data(31 downto 24); --load byte
         end if;
     end process;
     
@@ -253,7 +254,7 @@ begin
             W => W_reg,
             IN1 => Ins_out(25 downto 21),
             IN2 => Ins_out(20 downto 16),
-            D => W_data,
+            D => W_data_seg,
             OUT1 => R_data1,
             OUT2 => R_data2
         ); 

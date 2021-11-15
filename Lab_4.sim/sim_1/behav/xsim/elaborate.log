@@ -1,6 +1,6 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_behav xil_defaultlib.CPU -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -24,5 +24,7 @@ Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
 Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
 Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
 Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
-Compiling architecture behavioral of entity xil_defaultlib.cpu
-Built simulation snapshot CPU_behav
+Compiling architecture behavioral of entity xil_defaultlib.CPU [cpu_default]
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav

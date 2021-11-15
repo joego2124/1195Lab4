@@ -1,0 +1,1472 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Nov 14 18:11:37 2021
+# Process ID: 22872
+# Current directory: C:/Xilinx/Lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17488 C:\Xilinx\Lab_4\Lab_4.xpr
+# Log file: C:/Xilinx/Lab_4/vivado.log
+# Journal file: C:/Xilinx/Lab_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Xilinx/Lab_4/Lab_4.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 721.281 ; gain = 97.227
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Arith_Unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPUControl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Comp'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Logical'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'flipflop'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/Registers.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Registers'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Shift'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SignExtend'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_behav xil_defaultlib.CPU -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.Logical [logical_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
+Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu
+Built simulation snapshot CPU_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim/xsim.dir/CPU_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Nov 14 18:14:49 2021...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 747.387 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_behav -key {Behavioral:sim_1:Functional:CPU} -tclbatch {CPU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source CPU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 780.402 ; gain = 33.016
+source ./cpu.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_datapath/CLK} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+ERROR: [Simtcl 6-8] No such HDL object /cpu_datapath/CLK
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_datapath/CLK} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+ERROR: [Simtcl 6-8] No such HDL object /cpu_datapath/CLK
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/CPU/Clock} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+# add_force Reset 1
+# add_force {/CPU/REGS/Q_temp[0]} -radix hex 00000001
+# add_force {/CPU/REGS/Q_temp[1]} -radix hex 00000002
+# run 2 ns
+# add_force Reset 0
+# add_force MemoryDataIn -radix hex 201821
+# run 3 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# remove_forces -all
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/CPU/Clock} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+# add_force Reset 1
+# add_force {/CPU/REGS/Q_temp[0]} -radix hex 00000001
+# add_force {/CPU/REGS/Q_temp[1]} -radix hex 00000002
+# run 2 ns
+# add_force Reset 0
+# add_force MemoryDataIn -radix hex 201821
+# run 3 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# remove_forces -all
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/CPU/Clock} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+# add_force Reset 1
+# add_force {/CPU/REGS/Q_temp[0]} -radix hex 00000001
+# add_force {/CPU/REGS/Q_temp[1]} -radix hex 00000002
+# run 2 ns
+# add_force Reset 0
+# add_force MemoryDataIn -radix hex 201821
+# run 3 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# remove_forces -all
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/CPU/Clock} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+# add_force Reset 1
+# add_force {/CPU/REGS/Q_temp[0]} -radix hex 00000001
+# add_force {/CPU/REGS/Q_temp[1]} -radix hex 00000002
+# run 2 ns
+# add_force Reset 0
+# add_force MemoryDataIn -radix hex 201821
+# run 3 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# remove_forces -all
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/CPU/Clock} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+# add_force Reset 1
+# add_force {/CPU/REGS/Q_temp[0]} -radix hex 00000001
+# add_force {/CPU/REGS/Q_temp[1]} -radix hex 00000002
+# run 2 ns
+# add_force Reset 0
+# add_force MemoryDataIn -radix hex 201821
+# run 3 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# remove_forces -all
+source ./addu_test.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/CPU/Clock} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+# add_force Reset 1
+# add_force {/CPU/REGS/Q_temp[0]} -radix hex 00000001
+# add_force {/CPU/REGS/Q_temp[1]} -radix hex 00000002
+# run 2 ns
+# add_force Reset 0
+# add_force MemoryDataIn -radix hex 201821
+# run 3 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# run 10 ns
+# remove_forces -all
+file mkdir C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd w ]
+add_files -fileset sim_1 C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd
+update_compile_order -fileset sim_1
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.Logical [logical_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
+Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.CPU [cpu_default]
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim/xsim.dir/CPU_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Nov 14 18:28:45 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 811.160 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '10' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_tb_behav -key {Behavioral:sim_1:Functional:CPU_tb} -tclbatch {CPU_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source CPU_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 819.555 ; gain = 8.395
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# memory location with a value
+invalid command name "memory"
+    while executing
+"memory location with a value"
+    (file "./toplevel.tcl" line 10)
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/U_1/mw_U_0ram_table[0]} -radix hex {20070011}
+ERROR: [Simtcl 6-8] No such HDL object /cpu_tb/U_1/mw_U_0ram_table[0]
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[4]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[5]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[6]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[7]} -radix hex {00000000}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# add_force reset 0
+ERROR: [Simtcl 6-8] No such HDL object reset
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[4]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[5]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[6]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[7]} -radix hex {00000000}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# add_force rst 0
+# run 2500ps
+# add_force rst 1
+# run 5 ns
+# add_force rst 0
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[4]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[5]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[6]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[7]} -radix hex {00000000}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[4]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[5]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[6]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[7]} -radix hex {00000000}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[4]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[5]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[6]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[7]} -radix hex {00000000}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[4]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[5]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[6]} -radix hex {00000000}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[7]} -radix hex {00000000}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 833.887 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_memory'
+ERROR: [VRFC 10-3539] multiple declarations of 'unsigned' included via multiple use clauses; none are made directly visible [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd:56]
+ERROR: [VRFC 10-3539] multiple declarations of 'unsigned' included via multiple use clauses; none are made directly visible [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd:61]
+ERROR: [VRFC 10-3763] type error near 'unsigned(mw_u_0addr_reg)' ; expected type 'unresolved_unsigned' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd:61]
+ERROR: [VRFC 10-3340] formal 'arg' has no actual or default value [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd:61]
+ERROR: [VRFC 10-3464] indexed name prefix type 'integer' is not an array type [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd:61]
+ERROR: [VRFC 10-3782] unit 'struct' ignored due to previous errors [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd:26]
+INFO: [VRFC 10-3070] VHDL file 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_memory'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.Logical [logical_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
+Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.CPU [cpu_default]
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_tb_behav -key {Behavioral:sim_1:Functional:CPU_tb} -tclbatch {CPU_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source CPU_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 833.887 ; gain = 0.000
+source CPU_tb.tcl
+couldn't read file "CPU_tb.tcl": no such file or directory
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_memory'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.Logical [logical_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
+Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.CPU [cpu_default]
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 833.887 ; gain = 0.000
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 833.887 ; gain = 0.000
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 833.887 ; gain = 0.000
+set_property top CPU_memory [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_memory' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_memory_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_memory_behav xil_defaultlib.CPU_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture struct of entity xil_defaultlib.cpu_memory
+Built simulation snapshot CPU_memory_behav
+INFO: [Common 17-344] 'run_program' was cancelled
+INFO: [Vivado 12-5357] 'elaborate' step aborted
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+INFO: [Common 17-344] 'relaunch_sim' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 833.887 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_memory' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_memory_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_memory_behav xil_defaultlib.CPU_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_memory_behav -key {Behavioral:sim_1:Functional:CPU_memory} -tclbatch {CPU_memory.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source CPU_memory.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_memory_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 833.887 ; gain = 0.000
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_memory' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_memory_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Users/Joseph Gao/Downloads/CPU_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_memory'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_memory_behav xil_defaultlib.CPU_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling architecture struct of entity xil_defaultlib.cpu_memory
+Built simulation snapshot CPU_memory_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim/xsim.dir/CPU_memory_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Nov 14 18:51:27 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 833.887 ; gain = 0.000
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:21 . Memory (MB): peak = 833.887 ; gain = 0.000
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 1
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr1 -radix hex 4
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force mw_U_0addr_reg -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force mw_U_0addr_reg -radix hex 4
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force mw_U_0addr_reg -radix hex 4
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 8
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_memory' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_memory_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_memory_behav xil_defaultlib.CPU_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 833.887 ; gain = 0.000
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 8
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 4
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 12
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 4
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 8
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 12
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 10
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 8
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 16
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 20
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 16
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 24
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 20
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 2
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 3
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 4
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 8
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 12
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 833.887 ; gain = 0.000
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.Logical [logical_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
+Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.CPU [cpu_default]
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 833.887 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_tb_behav -key {Behavioral:sim_1:Functional:CPU_tb} -tclbatch {CPU_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source CPU_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 833.887 ; gain = 0.000
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+set_property top CPU_memory [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_memory' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_memory_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_memory_behav xil_defaultlib.CPU_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_memory_behav -key {Behavioral:sim_1:Functional:CPU_memory} -tclbatch {CPU_memory.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source CPU_memory.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_memory_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 12
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+source ./mem.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force addr -radix hex 0
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+current_sim simulation_5
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1026.359 ; gain = 0.000
+ERROR: [Vivado 12-1501] Simulator for snapshot 'Behavioral:sim_1:Functional:CPU_memory' is already running. To launch simulation, change the snapshot name in the simulation fileset settings or close the current simulation.
+INFO: [Common 17-17] undo 'relaunch_sim'
+INFO: [Common 17-17] undo 'relaunch_sim'
+ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-1501] Simulator for snapshot 'Behavioral:sim_1:Functional:CPU_memory' is already running. To launch simulation, change the snapshot name in the simulation fileset settings or close the current simulation.
+
+current_sim simulation_6
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1026.359 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_memory' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_memory_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_memory_behav xil_defaultlib.CPU_memory -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [Common 17-344] 'run_program' was cancelled
+INFO: [Vivado 12-5357] 'elaborate' step aborted
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+INFO: [Common 17-344] 'relaunch_sim' was cancelled
+set_property top CPU_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1026.359 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1026.359 ; gain = 0.000
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1026.359 ; gain = 0.000
+update_compile_order -fileset sim_1
+source ./toplevel.tcl
+# restart
+INFO: [Simtcl 6-17] Simulation restarted
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[0]} -radix hex {20070011}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[1]} -radix hex {200BFFFD}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[2]} -radix hex {00EB5824}
+# add_force {/cpu_tb/CPU_mem/mw_U_0ram_table[3]} -radix hex {ACEB000F}
+# add_force clk 1 {0 5ns} -repeat_every 10ns
+# run 200 ns
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1026.359 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj CPU_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Xilinx/Lab_4/Lab_4.srcs/sim_1/new/CPU_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'CPU_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Xilinx/Lab_4/Lab_4.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]
+Compiling architecture behavioral of entity xil_defaultlib.Registers [registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.Logical [logical_default]
+Compiling architecture behavioral of entity xil_defaultlib.Shift [shift_default]
+Compiling architecture behavioral of entity xil_defaultlib.Comp [comp_default]
+Compiling architecture struct of entity xil_defaultlib.Arith_Unit [arith_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.CPU [cpu_default]
+Compiling architecture struct of entity xil_defaultlib.CPU_memory [cpu_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.cpu_tb
+Built simulation snapshot CPU_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1026.359 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1026.359 ; gain = 0.000
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 1026.359 ; gain = 0.000
