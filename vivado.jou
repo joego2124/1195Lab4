@@ -147,3 +147,34 @@ relaunch_sim
 update_compile_order -fileset sim_1
 source ./toplevel.tcl
 relaunch_sim
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+source ./toplevel.tcl
+relaunch_sim
+relaunch_sim
+source ./toplevel.tcl

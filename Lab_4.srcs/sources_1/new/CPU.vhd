@@ -210,17 +210,17 @@ begin
         
     W_reg <= Ins_out(20 downto 16) when (RegDst = '0') else Ins_out(15 downto 11); 
     
-    W_data <= ALU_Out when (MemtoReg = '0') else Mem_reg_out;
+    W_data <= ALU_Out when (MemtoReg = '0') else W_data_seg;
     
-    process(W_data)
+    process(Mem_reg_out)
     begin
         W_data_seg <= x"00000000";
         if (Load_sel = "00") then
-            W_data_seg <= W_data; --load word
+            W_data_seg <= Mem_reg_out; --load word
         elsif (Load_sel = "01") then
-            W_data_seg(15 downto 0) <= W_data(31 downto 16); --load halfword
+            W_data_seg(15 downto 0) <= Mem_reg_out(15 downto 0); --load halfword
         elsif (Load_sel = "10") then
-            W_data_seg(7 downto 0) <= W_data(31 downto 24); --load byte
+            W_data_seg(7 downto 0) <= Mem_reg_out(7 downto 0); --load byte
         end if;
     end process;
     
@@ -254,7 +254,7 @@ begin
             W => W_reg,
             IN1 => Ins_out(25 downto 21),
             IN2 => Ins_out(20 downto 16),
-            D => W_data_seg,
+            D => W_data,
             OUT1 => R_data1,
             OUT2 => R_data2
         ); 
