@@ -36,9 +36,9 @@ entity CPUControl is
     INS : in std_logic_vector(31 downto 0);
     CLK, RST : in std_logic := '0';
     PCWriteCond, PCWrite: out std_logic := '0';
-    PCSource : out std_logic_vector(1 downto 0) := "00";
+    PCSource, MemtoReg : out std_logic_vector(1 downto 0) := "00";
     IorD: out std_logic := '0';
-    MemWrite, MemtoReg: out std_logic := '0';
+    MemWrite : out std_logic := '0';
     IRWrite: out std_logic := '0';
     ALUSrcA, ALUA, ALUB, ALUOut: out std_logic := '0';
     ALUSrcB: out std_logic_vector(1 downto 0) := "00";
@@ -53,7 +53,7 @@ end CPUControl;
 architecture Behavioral of CPUControl is
     
     type state_type is (
-        ins_fetch, ins_decode, exec, r_comp, write_back, branch_comp, jump_comp, mem_access, mem_comp, mem_read_comp
+        ins_fetch, ins_decode, exec, r_comp, write_back, branch_comp, jump_comp, mem_access, mem_comp, mem_read_comp, LUI_comp
     );
     
     signal pr_state, next_state : state_type;
@@ -143,7 +143,13 @@ begin
                     ALUSrcA <= '1'; --set SrcA to regA
                     ALUSrcB <= "10"; --select 32 bit extended immediate
                     next_state <= exec;
-                
+                elsif (OP = "001111") then --LUI
+                    RegDst <= '0'; --select 20 downto 16 for destination register
+                    RegWrite <= '1'; --enable writing to register
+                    MemtoReg <= "10"; --write sign extended immediate to register
+                    
+                    next_state <= LUI_comp;
+                    
                 --J-type
                 elsif (OP = "000101") then --BNE
                     ALUA <= '1'; --latch ALU inputs
@@ -176,7 +182,7 @@ begin
                 else
                     RegDst <= '0'; --select rt for reg addr for immediate ins
                 end if;
-                MemToReg <= '0'; --write back ALU result to dst reg
+                MemToReg <= "00"; --write back ALU result to dst reg
                 RegWrite <= '1'; --enable writing to registers
                 
                 ALUOut <= '0'; --close ALUOut reg
@@ -227,9 +233,16 @@ begin
                 end if;
             when mem_read_comp =>
                 RegDst <= '0'; --select 20 downto 16 from isntruction
-                MemtoReg <= '1'; --select mem reg to write to reg file
+                MemtoReg <= "01"; --select mem reg to write to reg file
                 RegWrite <= '1'; --write to reg
                 
+                ALUSrcA <= '0'; --set SrcA to PC out
+                ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
+                ALUOp <= "0101"; --set ALU to unsigned addition
+                PCSource <= "00"; --set next PC to result of ALU: current PC +4
+                PCWrite <= '1'; --update pc reg with +4 pc
+                next_state <= ins_fetch;
+            when LUI_comp =>
                 ALUSrcA <= '0'; --set SrcA to PC out
                 ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
                 ALUOp <= "0101"; --set ALU to unsigned addition

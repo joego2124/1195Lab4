@@ -91,7 +91,8 @@ architecture Behavioral of CPU is
         PCWriteCond, PCWrite: out std_logic := '0';
         PCSource : out std_logic_vector(1 downto 0) := "00";
         IorD: out std_logic := '0';
-        MemWrite, MemtoReg: out std_logic := '0';
+        MemWrite : out std_logic := '0';
+        MemtoReg : out std_logic_vector(1 downto 0) := "00";
         IRWrite: out std_logic := '0';
         ALUSrcA, ALUA, ALUB, ALUOut: out std_logic := '0';
         ALUSrcB: out std_logic_vector(1 downto 0) := "00";
@@ -103,11 +104,13 @@ architecture Behavioral of CPU is
       );
     end component CPUControl;
     
+    signal Mem_out : std_logic_vector(31 downto 0);
+    
     --control signals
     signal ALUSrcA : std_logic;
-    signal ALUSrcB, Load_sel  : std_logic_vector(1 downto 0);
+    signal ALUSrcB, Load_sel, MemtoReg  : std_logic_vector(1 downto 0);
     signal PC_en, PCWrite, PCWriteCond, ALU_zero, IorD, ALU_of : std_logic;
-    signal MemWrite, MemtoReg, IRWrite, RegDst, RegWrite, SLLV, MemRegEn : std_logic;
+    signal MemWrite, IRWrite, RegDst, RegWrite, SLLV, MemRegEn : std_logic;
     
     --IF signals
     signal ALU_result, PC_in, PC_out : std_logic_vector(31 downto 0) := (others => '0');
@@ -116,7 +119,7 @@ architecture Behavioral of CPU is
     signal J_shift_2 : std_logic_vector(27 downto 0);
     
     --Ins reg signals
-    signal Ins_out, Mem_reg_out : std_logic_vector(31 downto 0);
+    signal Ins_out, Mem_reg_out, LUI_EX  : std_logic_vector(31 downto 0);
      
     --Regs signals
     signal W_reg : std_logic_vector(4 downto 0);
@@ -176,7 +179,8 @@ begin
              
     PC_en <= PCWrite or (PCWriteCond and ALU_zero);
     
-    MemoryAdress <= PC_out when (IorD = '0') else ALU_out;
+    Mem_out <= PC_out when (IorD = '0') else ALU_out;
+    MemoryAdress <= Mem_out;
     
     PC_REG : flipflop
         generic map(N => 32)
@@ -210,7 +214,9 @@ begin
         
     W_reg <= Ins_out(20 downto 16) when (RegDst = '0') else Ins_out(15 downto 11); 
     
-    W_data <= ALU_Out when (MemtoReg = '0') else W_data_seg;
+    W_data <= ALU_Out when (MemtoReg = "00") else 
+              W_data_seg when (MemtoReg = "01") else
+              LUI_EX; 
     
     process(Mem_reg_out)
     begin
@@ -218,11 +224,34 @@ begin
         if (Load_sel = "00") then
             W_data_seg <= Mem_reg_out; --load word
         elsif (Load_sel = "01") then
-            W_data_seg(15 downto 0) <= Mem_reg_out(15 downto 0); --load halfword
+            if (Mem_out(1) = '1') then
+                W_data_seg(15 downto 0) <= Mem_reg_out(31 downto 16); --load upper halfword
+            else
+                W_data_seg(15 downto 0) <= Mem_reg_out(15 downto 0); --load lower halfword
+            end if;
         elsif (Load_sel = "10") then
-            W_data_seg(7 downto 0) <= Mem_reg_out(7 downto 0); --load byte
+            if (Mem_out(1 downto 0) = "11") then
+                W_data_seg(7 downto 0) <= Mem_reg_out(31 downto 24); --load highest byte
+            elsif (Mem_out(1 downto 0) = "10") then
+                W_data_seg(7 downto 0) <= Mem_reg_out(23 downto 16); --load upper mid byte
+            elsif (Mem_out(1 downto 0) = "01") then
+                W_data_seg(7 downto 0) <= Mem_reg_out(15 downto 8); --load lower mid byte
+            else
+                W_data_seg(7 downto 0) <= Mem_reg_out(7 downto 0); --load lowest byte
+            end if;
         end if;
     end process;
+    
+    LUI : SignExtend
+        generic map (
+            INL   => 16,
+            OUTL  => 32,
+            SHIFT => 16
+        )
+        Port map (
+            INPUT  => Ins_out(15 downto 0),
+            OUTPUT => LUI_EX
+        ); 
     
     IMM_EX : SignExtend
         generic map (
