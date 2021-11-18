@@ -1,0 +1,845 @@
+
+*** Running vivado
+    with args -log Lab_4_CPU_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Lab_4_CPU_0_0.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source Lab_4_CPU_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Xilinx/Lab_4/Lab_4_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:adder:1.0'. The one found in IP location 'c:/Xilinx/Lab_4/Lab_4_repo/ip_repo/adder' will take precedence over the same IP in location c:/Xilinx/Lab_4/Lab_4_repo/resources/adder
+Command: synth_design -top Lab_4_CPU_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22516 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 371.887 ; gain = 105.156
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Lab_4_CPU_0_0' [c:/Xilinx/Lab_4/Lab_4.srcs/sources_1/bd/Lab_4/ip/Lab_4_CPU_0_0/synth/Lab_4_CPU_0_0.v:58]
+INFO: [Synth 8-638] synthesizing module 'CPU' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:44]
+INFO: [Synth 8-3491] module 'CPUControl' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:34' bound to instance 'CPU_CONTROL' of component 'CPUControl' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:160]
+INFO: [Synth 8-638] synthesizing module 'CPUControl' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:53]
+WARNING: [Synth 8-614] signal 'INS' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:92]
+INFO: [Synth 8-256] done synthesizing module 'CPUControl' (1#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:53]
+INFO: [Synth 8-3491] module 'Control' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:34' bound to instance 'MULT' of component 'Control' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:180]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:43]
+	Parameter N bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'Prod_Reg' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:45]
+	Parameter N bound to: 64 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'flipflop' (2#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:45]
+	Parameter n bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'addsub' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:34' bound to instance 'ALU' of component 'addsub' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'addsub' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:43]
+	Parameter n bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'first_full_adder' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'full_adder' (3#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:41]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/full_adder.vhd:34' bound to instance 'full_adders' of component 'full_adder' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'addsub' (4#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/addsub.vhd:43]
+	Parameter N bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'ShiftReg' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:35' bound to instance 'Multiplicand_reg' of component 'ShiftReg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'ShiftReg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:44]
+	Parameter N bound to: 64 - type: integer 
+WARNING: [Synth 8-614] signal 'INPUT' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:50]
+WARNING: [Synth 8-614] signal 'SHIFT' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'ShiftReg' (5#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:44]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'ShiftReg' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:35' bound to instance 'Multiplier_reg' of component 'ShiftReg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'ShiftReg__parameterized1' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:44]
+	Parameter N bound to: 32 - type: integer 
+WARNING: [Synth 8-614] signal 'INPUT' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:50]
+WARNING: [Synth 8-614] signal 'SHIFT' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'ShiftReg__parameterized1' (5#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/ShiftReg.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'Control' (6#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:43]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'HI_REG' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'flipflop__parameterized1' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:45]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'flipflop__parameterized1' (6#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:45]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'LO_REG' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:198]
+	Parameter INL bound to: 26 - type: integer 
+	Parameter OUTL bound to: 28 - type: integer 
+	Parameter SHIFT bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'SignExtend' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:35' bound to instance 'J_EXT' of component 'SignExtend' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:210]
+INFO: [Synth 8-638] synthesizing module 'SignExtend' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter INL bound to: 26 - type: integer 
+	Parameter OUTL bound to: 28 - type: integer 
+	Parameter SHIFT bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SignExtend' (7#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'PC_REG' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:234]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'INS_REG' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:244]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'MEM_REG' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:254]
+WARNING: [Synth 8-614] signal 'Load_sel' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:273]
+WARNING: [Synth 8-614] signal 'Mem_out' is read in the process but is not in the sensitivity list [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:273]
+	Parameter INL bound to: 16 - type: integer 
+	Parameter OUTL bound to: 32 - type: integer 
+	Parameter SHIFT bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'SignExtend' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:35' bound to instance 'LUI' of component 'SignExtend' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:297]
+INFO: [Synth 8-638] synthesizing module 'SignExtend__parameterized1' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter INL bound to: 16 - type: integer 
+	Parameter OUTL bound to: 32 - type: integer 
+	Parameter SHIFT bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SignExtend__parameterized1' (7#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter INL bound to: 16 - type: integer 
+	Parameter OUTL bound to: 32 - type: integer 
+	Parameter SHIFT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'SignExtend' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:35' bound to instance 'IMM_EX' of component 'SignExtend' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:308]
+INFO: [Synth 8-638] synthesizing module 'SignExtend__parameterized3' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter INL bound to: 16 - type: integer 
+	Parameter OUTL bound to: 32 - type: integer 
+	Parameter SHIFT bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SignExtend__parameterized3' (7#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter INL bound to: 32 - type: integer 
+	Parameter OUTL bound to: 32 - type: integer 
+	Parameter SHIFT bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'SignExtend' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:35' bound to instance 'IMM_2' of component 'SignExtend' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:319]
+INFO: [Synth 8-638] synthesizing module 'SignExtend__parameterized5' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+	Parameter INL bound to: 32 - type: integer 
+	Parameter OUTL bound to: 32 - type: integer 
+	Parameter SHIFT bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SignExtend__parameterized5' (7#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/SignExtend.vhd:47]
+INFO: [Synth 8-3491] module 'Registers' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/Registers.vhd:35' bound to instance 'REGS' of component 'Registers' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:330]
+INFO: [Synth 8-638] synthesizing module 'Registers' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/Registers.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'Registers' (8#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/Registers.vhd:44]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'REG_A' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:343]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'REG_B' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:369]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:34' bound to instance 'ALU_Block' of component 'ALU' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:390]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:44]
+INFO: [Synth 8-3491] module 'Logical' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd:34' bound to instance 'U1' of component 'Logical' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'Logical' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'Logical' (9#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Logical.vhd:43]
+INFO: [Synth 8-3491] module 'Shift' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd:34' bound to instance 'U2' of component 'Shift' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'Shift' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'Shift' (10#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Shift.vhd:43]
+INFO: [Synth 8-3491] module 'Comp' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd:35' bound to instance 'U3' of component 'Comp' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'Comp' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'Comp' (11#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/Comp.vhd:46]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'Arith_Unit' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd:9' bound to instance 'U4' of component 'Arith_Unit' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'Arith_Unit' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd:27]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Arith_Unit' (12#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2_repo/Arith_Unit/src/Arith_Unit.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (13#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_2/Lab_2.srcs/sources_1/new/ALU.vhd:44]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'flipflop' declared at 'C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Register.vhd:34' bound to instance 'ALU_Reg' of component 'flipflop' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:401]
+INFO: [Synth 8-256] done synthesizing module 'CPU' (14#1) [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPU.vhd:44]
+INFO: [Synth 8-6155] done synthesizing module 'Lab_4_CPU_0_0' (15#1) [c:/Xilinx/Lab_4/Lab_4.srcs/sources_1/bd/Lab_4/ip/Lab_4_CPU_0_0/synth/Lab_4_CPU_0_0.v:58]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[25]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[24]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[23]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[22]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[21]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[20]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[19]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[18]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[17]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[16]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[15]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[14]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[13]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[12]
+WARNING: [Synth 8-3331] design CPUControl has unconnected port INS[11]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 433.781 ; gain = 167.051
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 433.781 ; gain = 167.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 433.781 ; gain = 167.051
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 794.262 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 794.262 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.206 . Memory (MB): peak = 797.871 ; gain = 3.609
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 797.871 ; gain = 531.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 797.871 ; gain = 531.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 797.871 ; gain = 531.141
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "PCWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PCWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SLLV" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUOp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Mult_reg_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'multiplier_set_reg' into 'product_rst_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:124]
+INFO: [Synth 8-4471] merging register 'multiplicand_set_reg' into 'product_rst_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:112]
+INFO: [Synth 8-4471] merging register 'multiplier_shift_reg' into 'multiplicand_shift_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/imports/Xilinx/Lab_3/Lab_3.srcs/sources_1/new/Control.vhd:126]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Control'
+INFO: [Synth 8-5545] ROM "DONE" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "DONE0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "product_rst" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "multiplicand_shift" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "product_en0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "Q_temp_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Q_temp_reg[0]" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'PCWriteCond_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:96]
+WARNING: [Synth 8-327] inferring latch for variable 'PCWrite_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:97]
+WARNING: [Synth 8-327] inferring latch for variable 'Mult_reg_sel_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:139]
+WARNING: [Synth 8-327] inferring latch for variable 'HI_en_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:102]
+WARNING: [Synth 8-327] inferring latch for variable 'Mult_rst_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:136]
+WARNING: [Synth 8-327] inferring latch for variable 'leading_sel_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:104]
+WARNING: [Synth 8-327] inferring latch for variable 'PCSource_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:187]
+WARNING: [Synth 8-327] inferring latch for variable 'MemtoReg_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:174]
+WARNING: [Synth 8-327] inferring latch for variable 'IorD_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:99]
+WARNING: [Synth 8-327] inferring latch for variable 'MemWrite_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:100]
+WARNING: [Synth 8-327] inferring latch for variable 'IRWrite_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:101]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcA_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:113]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUA_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:111]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUB_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:112]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUOut_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:206]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcB_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:114]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUOp_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:119]
+WARNING: [Synth 8-327] inferring latch for variable 'RegWrite_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:98]
+WARNING: [Synth 8-327] inferring latch for variable 'RegDst_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:148]
+WARNING: [Synth 8-327] inferring latch for variable 'SHAMT_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:126]
+WARNING: [Synth 8-327] inferring latch for variable 'SLLV_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:115]
+WARNING: [Synth 8-327] inferring latch for variable 'MemRegEn_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:262]
+WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [C:/Xilinx/Lab_4/Lab_4.srcs/sources_1/new/CPUControl.vhd:88]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   start |                               00 |                              000
+                    test |                               01 |                              001
+                   shift |                               10 |                              010
+                  finish |                               11 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 797.871 ; gain = 531.141
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     30 Bit       Adders := 1     
+	   2 Input     29 Bit       Adders := 1     
+	   2 Input     28 Bit       Adders := 1     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     23 Bit       Adders := 1     
+	   2 Input     22 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input     19 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 128   
++---Registers : 
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 42    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 24    
+	   4 Input     32 Bit        Muxes := 5     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     23 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	  14 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   6 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 1     
+	  14 Input      2 Bit        Muxes := 3     
+	  19 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 28    
+	   2 Input      1 Bit        Muxes := 98    
+	   7 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 3     
+	   8 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module CPUControl 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	  14 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   6 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	  14 Input      2 Bit        Muxes := 3     
+	  19 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 28    
+	   2 Input      1 Bit        Muxes := 30    
+	   7 Input      1 Bit        Muxes := 2     
+	  11 Input      1 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 3     
+	   6 Input      1 Bit        Muxes := 3     
+	   8 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module flipflop 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+Module full_adder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+Module addsub 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+Module ShiftReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+Module ShiftReg__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+Module Control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 9     
+Module flipflop__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module Registers 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 32    
+Module Logical 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module Shift 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 11    
+Module Comp 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module Arith_Unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module CPU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     31 Bit       Adders := 1     
+	   2 Input     30 Bit       Adders := 1     
+	   2 Input     29 Bit       Adders := 1     
+	   2 Input     28 Bit       Adders := 1     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     23 Bit       Adders := 1     
+	   2 Input     22 Bit       Adders := 1     
+	   2 Input     21 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input     19 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+	   3 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     23 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     19 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 30    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "DONE" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/MULT/\Multiplier_reg/Q_temp_reg[31]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/MULT/\Multiplicand_reg/Q_temp_reg[0]_C )
+WARNING: [Synth 8-3332] Sequential element (Multiplier_reg/Q_temp_reg[31]_C) is unused and will be removed from module Control.
+WARNING: [Synth 8-3332] Sequential element (Multiplicand_reg/Q_temp_reg[0]_C) is unused and will be removed from module Control.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:35 . Memory (MB): peak = 797.871 ; gain = 531.141
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:47 . Memory (MB): peak = 797.871 ; gain = 531.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:01:48 . Memory (MB): peak = 798.809 ; gain = 532.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:43 ; elapsed = 00:01:50 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:44 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    92|
+|2     |LUT1   |     3|
+|3     |LUT2   |    87|
+|4     |LUT3   |   284|
+|5     |LUT4   |   146|
+|6     |LUT5   |   587|
+|7     |LUT6   |  1029|
+|8     |MUXF7  |   264|
+|9     |FDCE   |   424|
+|10    |FDPE   |    64|
+|11    |FDRE   |  1127|
+|12    |LD     |    36|
+|13    |LDC    |    64|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------+---------------------------+------+
+|      |Instance               |Module                     |Cells |
++------+-----------------------+---------------------------+------+
+|1     |top                    |                           |  4207|
+|2     |  inst                 |CPU                        |  4207|
+|3     |    ALU_Reg            |flipflop__parameterized1   |    64|
+|4     |    CPU_CONTROL        |CPUControl                 |   543|
+|5     |    HI_REG             |flipflop__parameterized1_0 |    32|
+|6     |    INS_REG            |flipflop__parameterized1_1 |   173|
+|7     |    LO_REG             |flipflop__parameterized1_2 |    32|
+|8     |    MEM_REG            |flipflop__parameterized1_3 |    64|
+|9     |    MULT               |Control                    |   741|
+|10    |      Multiplicand_reg |ShiftReg                   |   377|
+|11    |      Multiplier_reg   |ShiftReg__parameterized1   |   158|
+|12    |      Prod_Reg         |flipflop                   |    76|
+|13    |    PC_REG             |flipflop__parameterized1_4 |    73|
+|14    |    REGS               |Registers                  |  1856|
+|15    |    REG_A              |flipflop__parameterized1_5 |   596|
+|16    |    REG_B              |flipflop__parameterized1_6 |    32|
++------+-----------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:45 ; elapsed = 00:01:52 . Memory (MB): peak = 837.172 ; gain = 570.441
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:25 ; elapsed = 00:01:39 . Memory (MB): peak = 837.172 ; gain = 206.352
+Synthesis Optimization Complete : Time (s): cpu = 00:01:45 ; elapsed = 00:01:53 . Memory (MB): peak = 837.172 ; gain = 570.441
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 456 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 837.172 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 100 instances were transformed.
+  LD => LDCE: 36 instances
+  LDC => LDCE: 64 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+199 Infos, 48 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:47 ; elapsed = 00:01:56 . Memory (MB): peak = 837.172 ; gain = 576.637
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 837.172 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Lab_4/Lab_4.runs/Lab_4_CPU_0_0_synth_1/Lab_4_CPU_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1174] Renamed 15 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 837.172 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Lab_4/Lab_4.runs/Lab_4_CPU_0_0_synth_1/Lab_4_CPU_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Lab_4_CPU_0_0_utilization_synth.rpt -pb Lab_4_CPU_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 18 02:31:01 2021...

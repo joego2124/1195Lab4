@@ -40,7 +40,8 @@ entity SignExtend is
   );
   Port (
     INPUT  : in std_logic_vector(INL - 1 downto 0);
-    OUTPUT : out std_logic_vector(OUTL - 1 downto 0) := (others => '0')
+    OUTPUT : out std_logic_vector(OUTL - 1 downto 0) := (others => '0');
+    sign_sel : in std_logic
   );
 end SignExtend;
 
@@ -50,12 +51,16 @@ begin
 
 --    OUTPUT((INL - 1 + SHIFT) downto SHIFT) <= INPUT; 
 
-    process(INPUT, extended)
+    process(INPUT, extended, sign_sel)
     begin
-        if (INPUT(INL - 1) = '1') then
-            extended <= (others => '1');
+        if (sign_sel = '0') then
+            extended <= (others => '0');
         else
-            extended <= (others => '0');            
+            if (INPUT(INL - 1) = '1') then
+                extended <= (others => '1');
+            else
+                extended <= (others => '0');            
+            end if;
         end if;
         extended(INL - 1 downto 0) <= INPUT;
         OUTPUT <= std_logic_vector(shift_left(unsigned(extended), SHIFT));

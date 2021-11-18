@@ -1,6 +1,6 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 93c1402732dc4f38834f04b5d2d2ba5f --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -13,9 +13,16 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
+Compiling module xil_defaultlib.glbl
 Compiling architecture behavioral of entity xil_defaultlib.CPUControl [cpucontrol_default]
-Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
+Compiling architecture flipflop of entity xil_defaultlib.flipflop [flipflop_default]
+Compiling architecture behavioral of entity xil_defaultlib.full_adder [full_adder_default]
+Compiling architecture behavioral of entity xil_defaultlib.addsub [\addsub(n=64)\]
+Compiling architecture behavioral of entity xil_defaultlib.ShiftReg [\ShiftReg(n=64)\]
+Compiling architecture behavioral of entity xil_defaultlib.ShiftReg [shiftreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Control [control_default]
 Compiling architecture flipflop of entity xil_defaultlib.flipflop [\flipflop(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=26,outl=28,shift...]
 Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(shift=16)\]
 Compiling architecture behavioral of entity xil_defaultlib.SignExtend [signextend_default]
 Compiling architecture behavioral of entity xil_defaultlib.SignExtend [\SignExtend(inl=32,shift=2)\]

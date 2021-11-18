@@ -34,8 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity CPUControl is
   Port (
     INS : in std_logic_vector(31 downto 0);
-    CLK, RST : in std_logic := '0';
-    PCWriteCond, PCWrite: out std_logic := '0';
+    CLK, RST, Done : in std_logic := '0';
+    PCWriteCond, PCWrite, Mult_reg_sel, HI_en, LO_en, Mult_rst, leading_sel, sign_sel : out std_logic := '0';
     PCSource, MemtoReg : out std_logic_vector(1 downto 0) := "00";
     IorD: out std_logic := '0';
     MemWrite : out std_logic := '0';
@@ -53,7 +53,20 @@ end CPUControl;
 architecture Behavioral of CPUControl is
     
     type state_type is (
-        ins_fetch, ins_decode, exec, r_comp, write_back, branch_comp, jump_comp, mem_access, mem_comp, mem_read_comp, LUI_comp
+        ins_fetch, 
+        ins_decode, 
+        exec, 
+        r_comp, 
+        write_back, 
+        branch_comp, 
+        jump_comp, 
+        mem_access, 
+        mem_comp, 
+        mem_read_comp, 
+        LUI_comp, 
+        mult_exec,
+        mult_comp,
+        clo_comp
     );
     
     signal pr_state, next_state : state_type;
@@ -76,7 +89,7 @@ begin
         end if;
     end process;
     
-    process (OP, FUNC, pr_state)
+    process (OP, FUNC, pr_state, Done)
     begin
         case pr_state is
             when ins_fetch =>
@@ -86,6 +99,10 @@ begin
                 IorD <= '0'; --default to PC reg
                 MemWrite <= '0'; --disable memory write
                 IRWrite <= '1'; --write instruction to instruction reg
+                HI_en <= '0';
+                LO_en <= '0';
+                leading_sel <= '0';
+                sign_sel <= '1';
                 next_state <= ins_decode;
             when ins_decode =>
                 IRWrite <= '0'; --close instruction register
@@ -116,10 +133,20 @@ begin
                         SHAMT <= INS(10 downto 6);
                     elsif (FUNC = "001000") then --JR
                         next_state <= jump_comp;
+                    elsif (FUNC = "011001") then --MULTU
+                        Mult_rst <= '1'; --reset multiplier
+                        next_state <= mult_exec;
+                    elsif (FUNC = "010000") then --MFHI
+                        Mult_reg_sel <= '1'; --select upper multiplier out bits
+                        next_state <= mult_comp;
+                    elsif (FUNC = "010010") then
+                        Mult_reg_sel <= '0'; --select lower multiplier out bits
+                        next_state <= mult_comp;
                     end if;
                     
                 --I-type
                 elsif (OP = "001000") then --add immediate
+                    sign_sel <= '1';
                     RegDst <= '0'; --select 20 downto 16 for destination register
                     ALUA <= '1'; --latch ALU inputs
                     ALUB <= '1';
@@ -134,6 +161,7 @@ begin
                     ALUOp <= "0001"; --or
                     ALUSrcA <= '1'; --set SrcA to regA
                     ALUSrcB <= "10"; --select 32 bit extended immediate
+                    sign_sel <= '0';
                     next_state <= exec;
                 elsif (OP = "001010") then --SLTI immediate
                     RegDst <= '0'; --select 20 downto 16 for destination register
@@ -166,10 +194,14 @@ begin
                     next_state <= branch_comp;
                 elsif (OP = "101011" or OP = "100011" or OP = "100000" or OP = "100001") then --SW, LW, LB, LW
                     ALUA <= '1'; --latch ALU A inputs for base addr
+                    ALUB <= '1'; --latch ALU B reg for SW val
                     ALUSrcA <= '1'; --set SrcA to regA
                     ALUSrcB <= "10"; --set SrcB to immediate offset
                     ALUOp <= "0101"; --add unsigned
                     next_state <= mem_comp;
+                elsif (OP = "011100") then --CLO
+                    ALUA <= '1'; --latch ALU A inputs for rs
+                    next_state <= clo_comp;
                 end if;
             when exec =>
                 ALUA <= '0'; --close ALU regs
@@ -219,8 +251,10 @@ begin
                 ALUOut <= '0'; --close ALU out reg
                 IorD <= '1'; --select ALU out as input to memory address
                 
-                if (OP = "101011") then
+                if (OP = "101011") then --SW
                     MemWrite <= '1'; --enable memory write
+                    ALUB <= '0'; --close ALU B reg
+                    
                     ALUSrcA <= '0'; --set SrcA to PC out
                     ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
                     ALUOp <= "0101"; --set ALU to unsigned addition
@@ -232,6 +266,7 @@ begin
                     next_state <= mem_read_comp;
                 end if;
             when mem_read_comp =>
+                MemRegEn <= '0';
                 RegDst <= '0'; --select 20 downto 16 from isntruction
                 MemtoReg <= "01"; --select mem reg to write to reg file
                 RegWrite <= '1'; --write to reg
@@ -243,6 +278,46 @@ begin
                 PCWrite <= '1'; --update pc reg with +4 pc
                 next_state <= ins_fetch;
             when LUI_comp =>
+                ALUSrcA <= '0'; --set SrcA to PC out
+                ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
+                ALUOp <= "0101"; --set ALU to unsigned addition
+                PCSource <= "00"; --set next PC to result of ALU: current PC +4
+                PCWrite <= '1'; --update pc reg with +4 pc
+                next_state <= ins_fetch;
+            when mult_exec =>
+                Mult_rst <= '0'; 
+                ALUA <= '0'; --close ALU regs
+                ALUB <= '0';
+                if (Done = '1') then
+                    HI_en <= '1';
+                    LO_en <= '1';
+                    
+                    ALUSrcA <= '0'; --set SrcA to PC out
+                    ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
+                    ALUOp <= "0101"; --set ALU to unsigned addition
+                    PCSource <= "00"; --set next PC to result of ALU: current PC +4
+                    PCWrite <= '1'; --update pc reg with +4 pc
+                    
+                    next_state <= ins_fetch;
+                end if;
+            when mult_comp =>
+                MemtoReg <= "11"; --select muxed multiplier output
+                RegDst <= '1'; --select 15 downto 11 for reg destination
+                RegWrite <= '1'; --enable writing to registers
+                
+                ALUOut <= '0'; --close ALUOut reg
+                ALUSrcA <= '0'; --set SrcA to PC out
+                ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
+                ALUOp <= "0101"; --set ALU to unsigned addition
+                PCSource <= "00"; --set next PC to result of ALU: current PC +4
+                PCWrite <= '1'; --update pc reg with +4 pc
+                next_state <= ins_fetch;
+            when clo_comp =>
+                RegWrite <= '1'; --enable writing to registers
+                RegDst <= '1';
+                leading_sel <= '1';
+                
+                ALUOut <= '0'; --close ALUOut reg
                 ALUSrcA <= '0'; --set SrcA to PC out
                 ALUSrcB <= "01"; --set ALU B to +4 for advancing PC
                 ALUOp <= "0101"; --set ALU to unsigned addition

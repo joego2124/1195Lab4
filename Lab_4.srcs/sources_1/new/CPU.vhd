@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -79,7 +80,8 @@ architecture Behavioral of CPU is
       );
       Port (
         INPUT  : in std_logic_vector(INL - 1 downto 0);
-        OUTPUT : out std_logic_vector(OUTL - 1 downto 0)
+        OUTPUT : out std_logic_vector(OUTL - 1 downto 0);
+        sign_sel : in std_logic
       );
     end component SignExtend;
 
@@ -87,8 +89,9 @@ architecture Behavioral of CPU is
     component CPUControl is
       Port (
         INS : in std_logic_vector(31 downto 0);
-        CLK, RST : in std_logic := '0';
-        PCWriteCond, PCWrite: out std_logic := '0';
+        CLK, RST, Done : in std_logic := '0';
+        HI_en, LO_en , Mult_reg_sel, leading_sel, sign_sel: out std_logic := '0';
+        PCWriteCond, PCWrite, Mult_rst: out std_logic := '0';
         PCSource : out std_logic_vector(1 downto 0) := "00";
         IorD: out std_logic := '0';
         MemWrite : out std_logic := '0';
@@ -103,6 +106,15 @@ architecture Behavioral of CPU is
         Load_sel : out std_logic_vector(1 downto 0)
       );
     end component CPUControl;
+    
+    component Control is
+        Port (
+            A, B     : in std_logic_vector(31 downto 0);
+            CLK, RST : in std_logic;
+            R        : out std_logic_vector(63 downto 0);
+            DONE     : out std_logic := '0'
+        );
+    end component Control;
     
     signal Mem_out : std_logic_vector(31 downto 0);
     
@@ -137,11 +149,19 @@ architecture Behavioral of CPU is
     signal ALUop : std_logic_vector(3 downto 0);
     signal ALU_out_en : std_logic;
     
+    --Multiplier signals
+    signal Mult_result : std_logic_vector(63 downto 0);
+    signal Mult_done, HI_en, LO_en, Mult_reg_sel, Mult_rst : std_logic;
+    signal Mult_reg_out, HI_out, LO_out : std_logic_vector(31 downto 0);
+    
+    signal leading_counter, W_data_2 : std_logic_vector(31 downto 0);
+    signal leading_sel, sign_sel : std_logic;
 begin
 
-    CONTROL : CPUControl
+    CPU_CONTROL : CPUControl
         port map (
-            CLK => Clock, RST => Reset,
+            CLK => Clock, RST => Reset, Done => Mult_done, Mult_reg_sel => Mult_reg_sel, Mult_rst => Mult_rst, leading_sel => leading_sel, sign_sel => sign_sel,
+            HI_en => HI_en, LO_en => LO_en,
             INS => Ins_out,
             PCWriteCond => PCWriteCond, PCWrite => PCWrite,
             PCSource => PCSource,
@@ -158,6 +178,36 @@ begin
             Load_sel => Load_sel
         );
         
+    MULT : Control
+        port map (
+            A => ALU_A, B => ALU_B,
+            CLK => Clock, RST => Mult_rst,
+            R  => Mult_result,
+            DONE => Mult_done
+        );
+    
+    HI_REG : flipflop
+        generic map (N => 32)
+        port map (
+            CLK => clock,
+            D => Mult_result(63 downto 32),
+            EN => HI_en,
+            RST => Reset,
+            Q => HI_out
+        );
+    
+    LO_REG : flipflop
+        generic map (N => 32)
+        port map (
+            CLK => clock,
+            D => Mult_result(31 downto 0),
+            EN => LO_en,
+            RST => Reset,
+            Q => LO_out
+        );
+        
+    Mult_reg_out <= LO_out when (Mult_reg_sel = '0') else HI_out; 
+    
     J_EXT : SignExtend
         generic map (
             INL   => 26,
@@ -166,7 +216,8 @@ begin
         )
         Port map (
             INPUT  => Ins_out(25 downto 0),
-            OUTPUT => J_shift_2 
+            OUTPUT => J_shift_2 ,
+            sign_sel => sign_sel
         ); 
     
     J_addr(31 downto 28) <= PC_out(31 downto 28); 
@@ -216,7 +267,10 @@ begin
     
     W_data <= ALU_Out when (MemtoReg = "00") else 
               W_data_seg when (MemtoReg = "01") else
-              LUI_EX; 
+              LUI_EX when (MemtoReg = "10") else
+              Mult_reg_out; 
+    
+    W_data_2 <= W_data when (leading_sel = '0') else leading_counter;
     
     process(Mem_reg_out)
     begin
@@ -250,7 +304,8 @@ begin
         )
         Port map (
             INPUT  => Ins_out(15 downto 0),
-            OUTPUT => LUI_EX
+            OUTPUT => LUI_EX,
+            sign_sel => sign_sel
         ); 
     
     IMM_EX : SignExtend
@@ -261,7 +316,8 @@ begin
         )
         Port map (
             INPUT  => Ins_out(15 downto 0),
-            OUTPUT => Immediate_ex
+            OUTPUT => Immediate_ex,
+            sign_sel => sign_sel
         );
         
     IMM_2 : SignExtend
@@ -272,7 +328,8 @@ begin
         )
         Port map (
             INPUT  => Immediate_ex,
-            OUTPUT => Immediate_2
+            OUTPUT => Immediate_2,
+            sign_sel => sign_sel
         );    
     
     REGS : Registers
@@ -283,7 +340,7 @@ begin
             W => W_reg,
             IN1 => Ins_out(25 downto 21),
             IN2 => Ins_out(20 downto 16),
-            D => W_data,
+            D => W_data_2,
             OUT1 => R_data1,
             OUT2 => R_data2
         ); 
@@ -297,6 +354,22 @@ begin
             RST => Reset,
             Q => Reg_A_out
         );
+
+    process(Reg_A_out)
+        variable counter : unsigned(31 downto 0);
+        variable flag : std_logic := '0';
+    begin
+        counter := x"00000000";
+        flag := '0';
+        for I in 31 downto 0 loop
+            if ((Reg_A_out(I) = '1') and (flag = '0')) then
+                counter := counter + 1;
+            else
+                flag := '1';
+            end if;
+        end loop;
+        leading_counter <= std_logic_vector(counter);
+    end process;
 
     REG_B : flipflop
         generic map (N => 32)

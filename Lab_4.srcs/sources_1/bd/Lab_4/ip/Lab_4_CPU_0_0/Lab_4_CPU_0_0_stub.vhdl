@@ -1,0 +1,35 @@
+-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-- --------------------------------------------------------------------------------
+-- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+-- Date        : Thu Nov 18 02:30:59 2021
+-- Host        : DESKTOP-0NACQ70 running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Xilinx/Lab_4/Lab_4.srcs/sources_1/bd/Lab_4/ip/Lab_4_CPU_0_0/Lab_4_CPU_0_0_stub.vhdl
+-- Design      : Lab_4_CPU_0_0
+-- Purpose     : Stub declaration of top-level module interface
+-- Device      : xc7z020clg400-1
+-- --------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Lab_4_CPU_0_0 is
+  Port ( 
+    Reset : in STD_LOGIC;
+    Clock : in STD_LOGIC;
+    MemoryWrite : out STD_LOGIC;
+    MemoryDataIn : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    MemoryDataOut : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    MemoryAdress : out STD_LOGIC_VECTOR ( 31 downto 0 )
+  );
+
+end Lab_4_CPU_0_0;
+
+architecture stub of Lab_4_CPU_0_0 is
+attribute syn_black_box : boolean;
+attribute black_box_pad_pin : string;
+attribute syn_black_box of stub : architecture is true;
+attribute black_box_pad_pin of stub : architecture is "Reset,Clock,MemoryWrite,MemoryDataIn[31:0],MemoryDataOut[31:0],MemoryAdress[31:0]";
+attribute X_CORE_INFO : string;
+attribute X_CORE_INFO of stub : architecture is "CPU,Vivado 2018.3";
+begin
+end;

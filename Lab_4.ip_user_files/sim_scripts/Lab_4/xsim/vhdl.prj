@@ -1,0 +1,8 @@
+vhdl xil_defaultlib  \
+"../../../../Lab_4.srcs/sources_1/bd/Lab_4/ipshared/5a01/src/mm_regmap.vhd" \
+"../../../../Lab_4.srcs/sources_1/bd/Lab_4/ipshared/5a01/src/axi_regmap.vhd" \
+"../../../../Lab_4.srcs/sources_1/bd/Lab_4/ip/Lab_4_axi_regmap_0_0/sim/Lab_4_axi_regmap_0_0.vhd" \
+"../../../../Lab_4.srcs/sources_1/bd/Lab_4/ip/Lab_4_rst_ps7_0_100M_0/sim/Lab_4_rst_ps7_0_100M_0.vhd" \
+"../../../../Lab_4.srcs/sources_1/bd/Lab_4/ip/Lab_4_axi_bram_ctrl_0_0/sim/Lab_4_axi_bram_ctrl_0_0.vhd" \
+
+nosort
